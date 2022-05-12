@@ -5,7 +5,7 @@ const inquirer = require('inquirer');
 const questions = [];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 // function init() {}
@@ -46,17 +46,110 @@ const promptUser = () => {
       }
     },
     {
-      type: 'confirm',
-      name: 'confirmAbout',
-      message: 'Would you like to enter some information about yourself for an "About" section?',
-      default: true
+      type: 'input',
+      name: 'installation',
+      message: 'Please enter instructions for installing your application. (Required)',
+      validate: installationInput => {
+        if (installationInput) {
+          return true;
+        } else {
+          console.log('Please enter the instructions to install your application!');
+          return false;
+        }
+      }
     },
     {
       type: 'input',
-      name: 'about',
-      message: 'Provide some information about yourself:',
-      when: ({ confirmAbout }) => confirmAbout
-    }
+      name: 'usage',
+      message: 'Enter how your application is used. (Required)',
+      validate: usageInput => {
+        if (usageInput) {
+          return true;
+        } else {
+          console.log('Please enter how the user can use your application!');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'contribution',
+      message: 'Enter a brief description of how someone can contribute to your application. (Required)',
+      validate: contributionInput => {
+        if (contributionInput) {
+          return true;
+        } else {
+          console.log('Please enter contribution guidelines for your application!');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'testing',
+      message: 'Enter a brief description of how to test your application. (Required)',
+      validate: testingInput => {
+        if (testingInput) {
+          return true;
+        } else {
+          console.log('Please enter a brief description of how to test your application!');
+          return false;
+        }
+      }
+    },
+    // {
+    //   // check if this is set up correctly
+    //   type: 'list-input',
+    //   name: 'license',
+    //   message: 'Select the license used for your application. (Required)',
+    //   choices: ['add more choices', 'more choices here']
+    //   validate: licenseInput => {
+    //     if (licenseInput) {
+    //       return true;
+    //     } else {
+    //       console.log('Please select the license used!');
+    //       return false;
+    //     }
+    //   }
+    // },
+    {
+      type: 'input',
+      name: 'githubUserName',
+      message: 'Enter your Github username. (Required)',
+      validate: githubUserNameInput => {
+        if (githubUserNameInput) {
+          return true;
+        } else {
+          console.log('Please enter your Github username!');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'Please enter your email address. (Required)',
+      validate: emailInput => {
+        if (emailInput) {
+          return true;
+        } else {
+          console.log('Please enter a valid email address!');
+          return false;
+        }
+      }
+    },
+    // {
+    //   type: 'confirm',
+    //   name: 'confirmAbout',
+    //   message: 'Would you like to enter some information about yourself for an "About" section?',
+    //   default: true
+    // },
+    // {
+    //   type: 'input',
+    //   name: 'about',
+    //   message: 'Provide some information about yourself:',
+    //   when: ({ confirmAbout }) => confirmAbout
+    // }
   ]);
 };
 
