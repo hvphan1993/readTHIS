@@ -102,7 +102,7 @@ const questions = [
       type: 'checkbox',
       name: 'license',
       message: 'Select the license used for your application. (Required)',
-      choices: ['MIT', 'GNU', 'MPL 2.0', 'Apache', 'Other'],
+      choices: ['MIT', 'GNU', 'MPL2.0', 'Apache', 'Other'],
       validate: licenseInput => {
         if (licenseInput) {
           return true;

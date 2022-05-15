@@ -6,6 +6,7 @@ function renderLicenseBadge(license) {
   if (license != "None") {
     badge = "![License Badge](https://shields.io/badge/license-" + license + "-blue)";
   } 
+  return badge;
 };
 
 // TODO: Create a function that returns the license link
@@ -13,6 +14,7 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   let licenseLink;
  
+  if (license != "None") {
   // select license used
   switch(license) {
     case "MIT":
@@ -21,18 +23,19 @@ function renderLicenseLink(license) {
     case "GNU":
       licenseLink = "https://www.gnu.org/licenses/gpl-3.0";
       break; 
-    case"MPL 2.0":
+    case "MPL2.0":
       licenseLink = "https://opensource.org/licenses/MPL-2.0";
       break;
     case "Apache":
       licenseLink = "https://www.apache.org/licenses/LICENSE-2.0.html";
       break;
     case "Other":
-      licenseLink = ""
+      licenseLink = "";
       break;
     default:
       licenseLink = "";
   }
+}
 
   return licenseLink;
 }
@@ -40,16 +43,18 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  let licenseSection = ""
+  let licenseSection = "";
 
   // create license section if license selected and include link to license info
   if (license != "None") {
-    licenseSection += "## License\n"
-    licenseSection += "See " + renderLicenseLink(license) + " to get more information about this license\n";
+    licenseSection += "## License:\n";
+    licenseSection += renderLicenseBadge(license) + "\n";
+    if (license != "Other") {
+      licenseSection += "See " + renderLicenseLink(license) + " to get more information about this license.\n";
+  };
   }
-
   return licenseSection;
-}
+};
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -76,9 +81,7 @@ function generateMarkdown(data) {
   ## Usage:
   ${data.usage}
 
-  ## License:
-  ${data.license}
-  "See " + ${renderLicenseLink(data.license)} + " to get more information about this license\n"
+ ${renderLicenseSection(data.license[0])}
 
   ## Contribution:
   ${data.contribution}
