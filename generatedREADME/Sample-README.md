@@ -2,7 +2,7 @@
   # Report Dashboard
 
   ## License:
-  [![license](https://img.shields.io/badge/license-Apache-blue.svg)](https://img.shields.io/badge/license-Apache-blue.svg)
+  [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://img.shields.io/badge/license-MIT-blue.svg)
 
   ## Table of Contents
   - [Description](#description)
@@ -16,14 +16,14 @@
   This Report Dashboard incorporates the data coming from security scans and presents them in a digestible format with summary and trending analysis.
   
   ## Installation:
-  Installation: This application has a React frontend and a node backend. To start the frontend, run the command `serve -s build -l 4000` to host it on port 4000. To start the backend, run `npm start` and it will automatically run on port 303
+  This application has a React frontend and a node backend. To start the frontend, run the command `serve -s build -l 4000` to host it on port 4000. To start the backend, run `npm start` and it will automatically run on port 3030.
 
   ## Usage:
   After it runs at `localhost:4000`, the user can navigate to the page and then begin to see the data populated from the automated jobs. They can see tabs at the top and use them to find their respective products.
 
  ## License:
-![License Badge](https://shields.io/badge/license-Apache-blue)
-See https://www.apache.org/licenses/LICENSE-2.0.html to get more information about this license.
+![License Badge](https://shields.io/badge/license-MIT-blue)
+See https://mit-license.org/ to get more information about this license.
 
 
   ## Contribution:
@@ -34,5 +34,5 @@ See https://www.apache.org/licenses/LICENSE-2.0.html to get more information abo
 
   ## Contact Information:
   - Github: [bonk](https://github.com/bonk)
-  - Email: [bonk@binkle.com](mailto:user@testexample.com)
+  - Email: [bonk@bingle.com](mailto:user@testexample.com)
 
